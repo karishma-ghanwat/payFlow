@@ -1,0 +1,20 @@
+const jwt = require("jsonwebtoken");
+
+module.exports = (req, res, next) => {
+    try {
+        const token = req.headers.authorization;
+
+        if (!token) {
+            return res.status(401).json({ message: "No token, access denied" });
+        }
+
+        const decoded = jwt.verify(token, "secretkey");
+
+        req.user = decoded; // attach user info
+
+        next(); // go to next step
+
+    } catch (err) {
+        res.status(401).json({ message: "Invalid token" });
+    }
+};

@@ -1,0 +1,327 @@
+/* ================= GLOBAL ================= */
+body {
+  background: radial-gradient(circle at 20% 20%, #1E293B, #0B1D51);
+  color: #E2E8F0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Accent */
+.text-accent {
+  color: #F68537;
+}
+
+/* ================= NAVBAR ================= */
+.navbar-custom {
+  background: #0B1D51;
+}
+
+/* ================= BUTTON ================= */
+.btn-accent {
+  background: linear-gradient(135deg, #F68537, #ff9a4d);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-accent:hover {
+  transform: scale(1.05);
+}
+
+/* ================= PAYMENT CARD ================= */
+.payment-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 35px;
+  width: 340px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 230px;
+  background: linear-gradient(180deg, #0B1D51, #020617);
+  min-height: 100vh;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Items */
+.sidebar-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.sidebar-item a {
+  color: #E2E8F0;
+  display: block;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-item.active {
+  background: linear-gradient(135deg, #F68537, #ff9a4d);
+}
+
+/* ================= LOGIN ================= */
+.login-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+}
+
+.login-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: white;
+}
+
+.login-input::placeholder {
+  color: #94A3B8;
+}
+
+/* ================= STATUS PAGE ================= */
+.status-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-text {
+  color: #22C55E;
+}
+
+.error-text {
+  color: #EF4444;
+}
+
+/* ================= CARDS ================= */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* KPI Cards */
+.kpi-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kpi-card p {
+  color: #94A3B8;
+}
+
+.kpi-card h2 {
+  color: #F68537;
+}
+
+/* ================= TABLE ================= */
+.table-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+}
+
+.table-header {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ================= STATUS ================= */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.success {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status.failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* ================= RECENT ================= */
+.recent-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.payment-clean {
+  width: 320px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: #0f172a;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.brand {
+  color: #94A3B8;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.amount {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.amount-input:focus {
+  outline: 2px solid #F68537;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #F68537;
+  color: white;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.pay-btn:hover {
+  background: #ff9a4d;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 13px;
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  padding: 25px;
+}
+
+/* TITLE */
+.page-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* KPI GRID */
+.kpi-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.kpi {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  background: #111827;
+}
+
+.kpi p {
+  color: #9CA3AF;
+  font-size: 14px;
+}
+
+.kpi h3 {
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+
+/* CARD */
+.card {
+  background: #111827;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.card-header h5 {
+  color: whitesmoke
+}
+
+/* TABLE */
+.table {
+  margin: 0;
+}
+
+/* STATUS COLORS */
+.status-success {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.status-created {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+/* KPI STATUS COLORS */
+.kpi.success {
+  background: #22c55e;
+
+}
+
+.kpi.success p {
+  color: whitesmoke;
+}
+
+.kpi.failed {
+  background: #ef4444;
+
+}
+
+.kpi.failed p {
+  color: whitesmoke;
+}
