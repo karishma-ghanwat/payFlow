@@ -325,3 +325,102 @@ tr:hover {
 .kpi.failed p {
   color: whitesmoke;
 }
+
+
+
+
+/* ================= PROFILE ================= */
+
+.profile-page {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.profile-header {
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg,
+      #F68537,
+      #ff9a4d);
+
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.profile-header h2 {
+  margin-bottom: 5px;
+  color: white;
+}
+
+.profile-header p {
+  color: #94A3B8;
+  margin: 0;
+}
+
+.profile-section {
+  margin-top: 30px;
+}
+
+.profile-section h5 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.profile-info>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile-info span {
+  color: #94A3B8;
+  font-size: 14px;
+}
+
+.profile-info strong {
+  color: #E2E8F0;
+  font-size: 15px;
+}
+
+.profile-status {
+  color: #22C55E !important;
+}

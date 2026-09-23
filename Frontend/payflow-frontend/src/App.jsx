@@ -7,41 +7,125 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Success from "./pages/Success";
 import Failure from "./pages/Failure";
+import Profile from "./pages/Profile";
 
-// ✅ Protected Route
+
+// ================= PROTECTED ROUTE =================
+
 function PrivateRoute({ children }) {
+
   const token = localStorage.getItem("token");
-  return token ? children : <Navigate to="/login" />;
+
+  return token
+    ? children
+    : <Navigate to="/login" />;
 }
 
-// ✅ Public Route (block if already logged in)
+
+// ================= PUBLIC ROUTE =================
+
 function PublicRoute({ children }) {
+
   const token = localStorage.getItem("token");
-  return token ? <Navigate to="/home" /> : children;
+
+  return token
+    ? <Navigate to="/home" />
+    : children;
 }
+
 
 function App() {
+
   return (
+
     <BrowserRouter>
+
       <Routes>
 
         {/* FIRST VISIT */}
-        <Route path="/" element={<Navigate to="/signup" />} />
+        <Route
+          path="/"
+          element={<Navigate to="/signup" />}
+        />
 
-        {/* AUTH */}
-        <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
-        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
 
-        {/* PROTECTED */}
-        <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
-        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/transactions" element={<PrivateRoute><Transactions /></PrivateRoute>} />
+        {/* ================= AUTH ================= */}
 
-        {/* STATUS */}
-        <Route path="/success" element={<Success />} />
-        <Route path="/failure" element={<Failure />} />
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute>
+              <Signup />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+
+
+        {/* ================= PROTECTED ================= */}
+
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/transactions"
+          element={
+            <PrivateRoute>
+              <Transactions />
+            </PrivateRoute>
+          }
+        />
+
+
+        {/* ================= PROFILE ================= */}
+
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+
+
+        {/* ================= STATUS ================= */}
+
+        <Route
+          path="/success"
+          element={<Success />}
+        />
+
+        <Route
+          path="/failure"
+          element={<Failure />}
+        />
 
       </Routes>
+
     </BrowserRouter>
   );
 }

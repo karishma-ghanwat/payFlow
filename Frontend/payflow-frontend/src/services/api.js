@@ -7,8 +7,9 @@ const API = axios.create({
             : "https://payflow-29rg.onrender.com/api",
 });
 
-// ✅ Attach JWT automatically
+// Attach JWT automatically
 API.interceptors.request.use((req) => {
+
     const token = localStorage.getItem("token");
 
     if (token) {

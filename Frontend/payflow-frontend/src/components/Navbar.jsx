@@ -10,26 +10,58 @@ function Navbar() {
     };
 
     return (
+
         <nav className="navbar navbar-custom px-4 d-flex justify-content-between">
 
-            <h4 className="text-white">PayFlow</h4>
+            {/* BRAND */}
+            <h4 className="text-white">
+                PayFlow
+            </h4>
 
-            <div className="d-flex gap-3">
 
-                {/* ✅ FIXED HOME BUTTON */}
-                <Link to="/home" className="text-white text-decoration-none">
+            <div className="d-flex gap-3 align-items-center">
+
+                {/* HOME */}
+                <Link
+                    to="/home"
+                    className="text-white text-decoration-none"
+                >
                     Home
                 </Link>
 
-                <Link to="/dashboard" className="text-white text-decoration-none">
+
+                {/* DASHBOARD */}
+                <Link
+                    to="/dashboard"
+                    className="text-white text-decoration-none"
+                >
                     Dashboard
                 </Link>
 
-                <Link to="/transactions" className="text-white text-decoration-none">
+
+                {/* TRANSACTIONS */}
+                <Link
+                    to="/transactions"
+                    className="text-white text-decoration-none"
+                >
                     Transactions
                 </Link>
 
-                <button className="btn btn-accent" onClick={handleLogout}>
+
+                {/* PROFILE */}
+                <Link
+                    to="/profile"
+                    className="text-white text-decoration-none"
+                >
+                    Profile
+                </Link>
+
+
+                {/* LOGOUT */}
+                <button
+                    className="btn btn-accent"
+                    onClick={handleLogout}
+                >
                     Logout
                 </button>
 
