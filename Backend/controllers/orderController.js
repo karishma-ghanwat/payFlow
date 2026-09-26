@@ -6,6 +6,9 @@ const razorpay = new Razorpay({
     key_secret: process.env.RAZORPAY_SECRET,
 });
 
+
+// ================= CREATE ORDER =================
+
 exports.createOrder = async (req, res) => {
     try {
         const { amount } = req.body;
@@ -17,14 +20,17 @@ exports.createOrder = async (req, res) => {
             });
         }
 
-        // ✅ Create Razorpay order
+        // Create Razorpay order
         const razorpayOrder = await razorpay.orders.create({
-            amount: amount * 100, // paisa
+            amount: amount * 100,
             currency: "INR",
         });
 
-        // ✅ Save in DB
+        // Save order in database
         const order = new Order({
+            // Store logged-in user's ID
+            userId: req.user.id,
+
             orderId: "order_" + Date.now(),
             amount,
             razorpayOrderId: razorpayOrder.id,
@@ -48,9 +54,16 @@ exports.createOrder = async (req, res) => {
     }
 };
 
+
+// ================= GET USER ORDERS =================
+
 exports.getAllOrders = async (req, res) => {
     try {
-        const orders = await Order.find().sort({ createdAt: -1 });
+
+        // Get only orders belonging to logged-in user
+        const orders = await Order.find({
+            userId: req.user.id
+        }).sort({ createdAt: -1 });
 
         res.json({
             success: true,
@@ -59,6 +72,8 @@ exports.getAllOrders = async (req, res) => {
         });
 
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({
+            error: error.message
+        });
     }
 };
